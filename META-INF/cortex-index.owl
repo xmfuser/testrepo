@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+  <!ENTITY n2 "http://www.esa.int/sentinel1#">
+  <!ENTITY drb "http://www.gael.fr/drb#">
+]>
+<rdf:RDF xmlns:owl="&owl;"
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;"
+         xmlns:n2="&n2;"
+         xmlns="&n2;"
+         xmlns:drb="&drb;">
+         
+<owl:Ontology rdf:about="&n2;">
+	<rdfs:label xml:lang="en">Sentinel-1 Ontology</rdfs:label>
+</owl:Ontology>
+   
+<owl:Class rdf:about="&n2;product">
+      <rdfs:label xml:lang="en">Sentinel Product</rdfs:label>
+      <rdfs:comment xml:lang="en">
+         Products are developed from the raw instrument data in several stages.
+         The four major stages are termed Raw, Level 0, Level 1B, and Level 2.
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>(.*\.dat)</drb:nameMatch>
+      </drb:signature>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>
+
+ 
+   
+   <owl:Class rdf:about="&n2;s1a-s1-raw">
+      <rdfs:label xml:lang="en">Sentinel 1 Level 0 Product</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&n2;product"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>s1a-s1-raw.*\.dat</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+         xsd/int/esa/sentinel1/s1-level-0.xsd
+      </drb:schemaLocation>
+      </owl:Class>
+</rdf:RDF>

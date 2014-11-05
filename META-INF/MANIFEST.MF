@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: pidancier
+Build-Jdk: 1.6.0_17
+Implementation-Title: Drbx Cortex Topic for Sentinel1 Items
+Implementation-Version: 1-0-rc-12
+Implementation-Vendor-Id: fr.gael.drb
+Implementation-Vendor: GAEL Consultant
